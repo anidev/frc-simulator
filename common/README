@@ -1,0 +1,1 @@
+This folder contains common files and libraries that can be used by any of the three versions of the simulator, such as the interface, which is completely language-independent from the simulator itself.

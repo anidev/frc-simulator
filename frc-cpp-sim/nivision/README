@@ -1,0 +1,2 @@
+This is an implementation of the nivision library used by WPILib's vision processing. The backend is opencv.
+

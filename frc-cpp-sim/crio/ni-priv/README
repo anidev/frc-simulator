@@ -1,0 +1,3 @@
+Implements the two private NI functions Priv_ReadJPEGString_C to convert JPEG data to an Image* and Priv_SetWriteFileAllowed to allow for write permissions (or abort if write permissions denied).
+
+Also implements other private/internal functions, such as niTimestamp{32|64}.

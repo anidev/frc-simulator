@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(vxworks-system_frc-cpp-sim)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -pedantic")
+file(GLOB_RECURSE VXWORKS-SYSTEM_SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+add_library(vxworks-system ${VXWORKS-SYSTEM_SOURCES})

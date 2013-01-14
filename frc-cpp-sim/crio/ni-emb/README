@@ -1,0 +1,1 @@
+This folder just implements the three functions UserSwitchInput, LedInput, and LedOutput, which are used to interact with the USER1 DIP switch and LED on the cRIO. Eventually, when netcontrol is written, these functions will communicate with the interface.

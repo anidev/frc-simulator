@@ -1,0 +1,1 @@
+This is the interface the simulator will communicate with. It will simulate the FRC Driver Station and Dashboard to any of the three versions of the simulator  and provide user interfaces of various types (GUI, CLI, etc.)

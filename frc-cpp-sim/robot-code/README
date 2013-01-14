@@ -1,0 +1,3 @@
+This is a temporary location for the robot code to easily make use of frc-cpp-sim dependencies while a proper build system is designed (probably with cmake).
+
+All files contained herein are Copyright 2011, 2012 FIRST Team 612 Chantilly Robotics. All code herein is licensed under the ISC license (refer to LICENSE.rst). For information about this robot code, including build instructions for deployment on an FRC robot imaged for WindRiver C/C++, refer to README.rst. All authors of this project are AUTHORS.rst.

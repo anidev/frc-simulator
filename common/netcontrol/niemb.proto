@@ -1,0 +1,14 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) Anirudh B. (anidev) 2012. All Rights Reserved.               */
+/* Open Source Software - may be modified and shared by FRC teams. The code   */
+/* must be accompanied by the FIRST BSD license file in this directory.       */
+/*----------------------------------------------------------------------------*/
+
+// ni-emb stuff - crio/ni-emb/include/ni-emb.h and crio/ni-emb/include/ni-emb.cpp
+
+package nc.niemb;
+
+message User1Data {
+	optional bool switch=1;
+	optional bool led=2;
+}

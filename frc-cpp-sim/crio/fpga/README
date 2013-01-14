@@ -1,0 +1,3 @@
+This is an implementation of the interfaces used by WPILib to communicate with the hardware via the FPGA. Most of the functions are declared in WPILib/ChipBoard.
+
+This library will expose an fpga front-end for use by WPILib and expose a network controllable backend. The idea is that the user interface for controlling the simulator can be written in a variety of languages and communicate with the actual running code over the network.

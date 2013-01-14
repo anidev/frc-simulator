@@ -1,0 +1,75 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) Anirudh B. (anidev) 2012. All Rights Reserved.               */
+/* Open Source Software - may be modified and shared by FRC teams. The code   */
+/* must be accompanied by the FIRST BSD license file in this directory.       */
+/*----------------------------------------------------------------------------*/
+
+// FRCComm stuff - see frccomm/include/FRCComm.h and frccomm/src/FRCComm.cpp
+
+package nc.frccomm;
+
+message CommonControlData {
+	message ControlFlags {
+		optional bool reset=1 [default=true];
+		optional bool not_estop=2 [default=true];
+		optional bool enabled=3 [default=true];
+		optional bool autonomous=4 [default=true];
+		optional bool fms_attached=5 [default=true];
+		optional bool resync=6 [default=true];
+		optional bool crio_checksum=7 [default=true];
+		optional bool fpga_checksum=8 [default=true];
+	}
+	message Joystick {
+		optional sint32 axis1=1;
+		optional sint32 axis2=2;
+		optional sint32 axis3=3;
+		optional sint32 axis4=4;
+		optional sint32 axis5=5;
+		optional sint32 axis6=6;
+		optional uint32 buttons=7;
+	}
+	required uint32 packet_index=1;
+	required ControlFlags control=2;
+	optional uint32 team_id=3;
+	optional uint32 ds_id_alliance=4;
+	optional uint32 ds_id_position=5;
+	optional Joystick stick0=6;
+	optional Joystick stick1=7;
+	optional Joystick stick2=8;
+	optional Joystick stick3=9;
+	optional string version=10;
+
+	// probably will never use
+	optional uint32 ds_digital_in=16;
+	optional uint32 analog1=17;
+	optional uint32 analog2=18;
+	optional uint32 analog3=19;
+	optional uint32 analog4=20;
+	optional uint64 crio_checksum=21;
+	optional uint32 fpga_checksum1=22;
+	optional uint32 fpga_checksum2=23;
+	optional uint32 fpga_checksum3=24;
+	optional uint32 fpga_checksum4=25;
+}
+
+message StatusData {
+	optional float battery=1 [default=0.00];
+	required uint32 update_num=2;
+	required int32 data_high_len=3;
+	required string data_high=4;
+	required int32 data_low_len=5;
+	required string data_low=6;
+
+	// probably will never use
+	optional uint32 ds_digital_out=16;
+}
+
+message ErrorData {
+	required uint32 data_len=1;
+	required string error_data=2;
+}
+
+message DsLcdData {
+	required uint32 data_len=1;
+	required string lcd_data=2;
+}

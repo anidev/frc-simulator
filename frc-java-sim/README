@@ -1,0 +1,3 @@
+This is a simulator for the FRC Robotics competition. The aim is to be able to simulate robot code on a PC without having to deploy to the robot every time to test, and also to be able to have multiple teams working on and testing different things at the same time. Once the project matures, the goal will also include debugging, which, being a simulator, will be debugging on the same PC the code is running on, thus making debugging much easier and much less buggier.
+
+This is the FRC Robotics simulator for Java robot code.

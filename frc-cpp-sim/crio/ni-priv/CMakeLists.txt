@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(ni-priv_frc-cpp-sim)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
+file(GLOB_RECURSE NI-PRIV_SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(${NIVISION_DIR}/include)
+include_directories(${VXWORKS-SYSTEM_DIR}/include)
+add_library(ni-priv ${NI-PRIV_SOURCES})

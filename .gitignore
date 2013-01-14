@@ -11,3 +11,11 @@
 *.lai
 *.la
 *.a
+
+# Build and cmake helper files
+build/
+build_frc-cpp-sim/
+CMakeFiles/
+
+# Backup files made by editors
+*~

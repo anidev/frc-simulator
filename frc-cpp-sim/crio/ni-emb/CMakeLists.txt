@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(ni-emb_frc-cpp-sim)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic")
+file(GLOB_RECURSE NI-EMB_SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+add_library(ni-emb ${NI-EMB_SOURCES})

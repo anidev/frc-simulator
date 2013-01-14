@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(frccomm_frc-cpp-sim)
+file(GLOB_RECURSE FRCCOMM_SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(${VXWORKS-SYSTEM_DIR}/include)
+add_library(frccomm ${FRCCOMM_SOURCES})
