@@ -59,7 +59,8 @@ tWatchdog_impl::tWatchdog_impl(tRioStatusCode* status):alive(true),
                                                        disable_count(0),
                                                        fed(false),
                                                        thread(NULL),
-                                                       expiration(10*1e6 /*10 seconds*/) {
+                                                       expiration(10*1e6 /*10 seconds*/)
+{
 	set_enabled(true);
 	clock_gettime(CLOCK_MONOTONIC,&time_fed);
 }

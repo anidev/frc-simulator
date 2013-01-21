@@ -39,7 +39,8 @@ tAccumulator_impl::tAccumulator_impl(unsigned char sys_index):sys_index(sys_inde
                                                               value(0),
                                                               count(0),
                                                               center(0),
-                                                              deadband(0) {
+                                                              deadband(0)
+{
 }
 
 tAccumulator_impl::~tAccumulator_impl() {
