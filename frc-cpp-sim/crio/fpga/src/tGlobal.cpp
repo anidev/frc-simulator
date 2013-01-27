@@ -52,8 +52,10 @@ bool tGlobal_impl::readFPGA_LED(tRioStatusCode* status) {
 }
 
 unsigned int tGlobal_impl::readLocalTime(tRioStatusCode* status) {
-	double micros=std::clock()*1.0/CLOCKS_PER_SEC*1000*1000;
-	return std::floor(micros);
+	timespec time;
+	clock_gettime(CLOCK_PROCESS_CPUTIME_ID,&time);
+	long micros=std::floor(time.tv_nsec/1000.0);
+	return micros+time.tv_sec*1e6;
 }
 
 unsigned int tGlobal_impl::readRevision(tRioStatusCode* status) {
