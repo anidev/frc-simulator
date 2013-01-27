@@ -66,6 +66,10 @@ tWatchdog_impl::tWatchdog_impl(tRioStatusCode* status):alive(true),
 }
 
 tWatchdog_impl::~tWatchdog_impl() {
+	if(thread!=NULL) {
+		pthread_cancel(*thread);
+		pthread_join(*thread,NULL);
+	}
 }
 
 nFPGA::tSystemInterface* tWatchdog_impl::getSystemInterface() {
