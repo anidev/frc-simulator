@@ -24,7 +24,7 @@ private:
 	interrupts();
 	~interrupts();
 public:
-	static const TIMER=1<<28;
+	static const int TIMER=1<<28;
 
 	static interrupts* get_instance();
 
