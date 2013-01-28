@@ -19,3 +19,12 @@ CMakeFiles/
 
 # Backup files made by editors
 *~
+
+# Robot code files
+.cproject
+.project
+.wrproject
+PPC603gnu/
+Makefile
+.wrmakefile
+.ucpp
