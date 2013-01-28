@@ -21,10 +21,5 @@ CMakeFiles/
 *~
 
 # Robot code files
-.cproject
-.project
-.wrproject
-PPC603gnu/
-Makefile
-.wrmakefile
-.ucpp
+/frc-cpp-sim/robot-code/src
+
