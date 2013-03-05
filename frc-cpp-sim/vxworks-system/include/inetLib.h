@@ -4,19 +4,12 @@
 /* must be accompanied by the FIRST BSD license file in this directory.       */
 /*----------------------------------------------------------------------------*/
 
-#ifndef USRLIB_H_INC
-#define USRLIB_H_INC
+#ifndef INETLIB_H_INC
+#define INETLIB_H_INC
 
-#include "taskLib.h" // WPILib expects usrLib.h to include taskLib.h
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-void printErrno(int);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif // USRLIB_H_INC
+#endif // INETLIB_H_INC

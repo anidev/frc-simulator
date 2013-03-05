@@ -7,7 +7,10 @@
 #ifndef VXWORKS_H_INC
 #define VXWORKS_H_INC
 
-#include <cstdint>
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h> // for the mem... family of functions
+#include <stdarg.h> // for va_... family of functions
 
 typedef int (*FUNCPTR)(...);
 
@@ -19,7 +22,7 @@ typedef int32_t  INT32;
 typedef uint32_t UINT32;
 typedef long long int  INT64;
 typedef unsigned long long int UINT64;
-typedef UINT32   UINT;
+typedef uint32_t   UINT;
 typedef int STATUS;
 typedef int BOOL;
 typedef unsigned short INSTR;
@@ -27,10 +30,13 @@ typedef unsigned short INSTR;
 static const STATUS OK=0;
 static const STATUS ERROR=-1;
 #ifndef TRUE
-static const BOOL TRUE=1;
+#define TRUE 1
 #endif
 #ifndef FALSE
-static const BOOL FALSE=0;
+#define FALSE 0
+#endif
+#ifndef NULL
+#define NULL 0
 #endif
 
 // AAGH for some reason WPILib's SensorBase::kSystemClockTicksPerMicrosecond

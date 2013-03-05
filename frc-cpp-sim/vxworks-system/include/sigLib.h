@@ -4,19 +4,12 @@
 /* must be accompanied by the FIRST BSD license file in this directory.       */
 /*----------------------------------------------------------------------------*/
 
-#ifndef USRLIB_H_INC
-#define USRLIB_H_INC
+#ifndef SIGLIB_H
+#define SIGLIB_H
 
-#include "taskLib.h" // WPILib expects usrLib.h to include taskLib.h
+#include <signal.h>
+#include "taskLib.h" // for taskKill
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+// Other sigLib functions not implemented
 
-void printErrno(int);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif // USRLIB_H_INC
+#endif // SIGLIB_H
