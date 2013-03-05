@@ -3,3 +3,5 @@ This is a simulator for the FRC Robotics competition. The aim is to be able to s
 This is the FRC Robotics simulator for C/C++ robot code.
 
 Robot code should be located in the robot-code/src directory. This is empty to allow you to add your own code. There might be sample code there in the future.
+
+NOTE: The structure of the C/C++ simulator is being changed. Previously, it tried to emulate an entire cRIO and FPGA system interface and tried to run WPILib on top of that. The new restructuring will have a custom made implementation of WPILib which will eventually implement every single WPILib class. In the long run, this will be faster and easier and far cleaner than trying to emulate an entire embedded system.
