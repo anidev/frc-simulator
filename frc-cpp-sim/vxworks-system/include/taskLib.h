@@ -12,11 +12,7 @@
 
 typedef int task_t;
 
-#ifdef __x86_64__
-typedef uint64_t taskarg_t;
-#else
-typedef uint32_t taskart_t;
-#endif
+typedef uintptr_t taskarg_t;
 #define TASKARG_T_DEFINED
 
 typedef struct _task_info {
@@ -78,6 +74,9 @@ STATUS taskIdVerify(task_t);
 BOOL taskIsReady(task_t);
 BOOL taskIsSuspended(task_t);
 int taskNameToId(const char*);
+
+// sigLib
+int taskKill(task_t,int);
 
 #ifdef __cplusplus
 }

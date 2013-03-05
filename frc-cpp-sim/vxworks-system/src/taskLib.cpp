@@ -9,6 +9,7 @@
 #include <map>
 #include <unistd.h>
 #include <sys/types.h>
+#include <signal.h>
 #include <pthread.h>
 #include "taskLib.h"
 #include "errnoLib.h"
@@ -258,4 +259,12 @@ int taskNameToId(const char* name) {
 		return ERROR;
 	}
 	return info->task_id;
+}
+
+// sigLib
+int taskKill(task_t task_id,int sig) {
+	pthread_mutex_lock(&map_mutex);
+	pthread_t thread=task_thread[task_id];
+	pthread_mutex_unlock(&map_mutex);
+	return pthread_kill(thread,sig);
 }
