@@ -58,7 +58,7 @@ void tInterruptManager::registerHandler(tInterruptHandler handler,void* param,tR
 
 unsigned int tInterruptManager::watch(int timeout,tRioStatusCode* status) {
 	// TODO
-	status=(tRioStatusCode*)&NiFpga_Status_IrqTimeout;
+	*status=NiFpga_Status_IrqTimeout;
 	return 0;
 }
 
