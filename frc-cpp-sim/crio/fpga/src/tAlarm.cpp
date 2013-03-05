@@ -5,6 +5,7 @@
 /*----------------------------------------------------------------------------*/
 
 #include <list>
+#include <iostream>
 #include "fpga.h"
 #include "interfaces/NiRio.h"
 #include "interfaces/tAlarm.h"
@@ -37,11 +38,14 @@ nFPGA::nFRC_2012_1_6_4::tAlarm* nFPGA::nFRC_2012_1_6_4::tAlarm::create(tRioStatu
 
 tAlarm_impl::tAlarm_impl(tRioStatusCode* code):trigger_time(0),
                                                enabled(false),
-                                               info(NULL);
+                                               info(NULL)
 {
 }
 
 tAlarm_impl::~tAlarm_impl() {
+	if(info!=NULL) {
+		delete info;
+	}
 }
 
 nFPGA::tSystemInterface* tAlarm_impl::getSystemInterface() {
@@ -55,7 +59,7 @@ void tAlarm_impl::writeTriggerTime(unsigned int time,tRioStatusCode* status) {
 		delete info;
 	}
 	info=new alarm_info;
-	
+	std::cout<<"New alarm set for "<<time<<" µs"<<std::endl;
 	writeEnable(enabled,NULL);
 }
 
@@ -65,9 +69,9 @@ unsigned int tAlarm_impl::readTriggerTime(tRioStatusCode* status) {
 
 void tAlarm_impl::writeEnable(bool value,tRioStatusCode* status) {
 	enabled=value;
-	if(enabled) {
+/*	if(enabled) {
 		alarms
-	}
+	}*/
 }
 
 bool tAlarm_impl::readEnable(tRioStatusCode* status) {
