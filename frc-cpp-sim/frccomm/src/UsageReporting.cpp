@@ -4,11 +4,10 @@
 /* must be accompanied by the FIRST BSD license file in this directory.       */
 /*----------------------------------------------------------------------------*/
 
-#include <cstddef>
-#include <cstdint>
+#include <vxWorks.h>
 #include "UsageReporting.h"
 
-uint32_t nUsageReporting::report(tResourceType resource,uint8_t instanceNumber,uint8_t context,const char* feature) {
+UINT32 nUsageReporting::report(tResourceType resource,UINT8 instanceNumber,UINT8 context,const char* feature) {
 	// we don't care about this stuff
 	return 0;
 }

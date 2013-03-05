@@ -5,13 +5,14 @@
 /*----------------------------------------------------------------------------*/
 
 #include <cstdint>
-#include "impl.h"
+#include <vxWorks.h>
+#include "frccomm-impl.h"
 #include "AICalibration.h"
 
-uint32_t FRC_NetworkCommunication_nAICalibration_getLSBWeight(const uint32_t aiSystemIndex,const uint32_t channel,int32_t* status) {
+UINT32 FRC_NetworkCommunication_nAICalibration_getLSBWeight(const UINT32 aiSystemIndex,const UINT32 channel,INT32* status) {
 	return LSB_WEIGHT;
 }
 
-int32_t FRC_NetworkCommunication_nAICalibration_getOffset(const uint32_t aiSystemIndex,const uint32_t channel,int32_t* status) {
+INT32 FRC_NetworkCommunication_nAICalibration_getOffset(const UINT32 aiSystemIndex,const UINT32 channel,INT32* status) {
 	return OFFSET;
 }
