@@ -16,3 +16,8 @@ this project will separate the robot code into a server, which simulates a robot
 and the executable generated from the robot code, which will connect to server over network sockets.
 This architecture has the added benefit of being able to test robot code remotely, though honestly
 there isn't much use for that.
+
+UPDATE: This project is currently on standby as I do not have time right now to continue working on it
+        (though I may push updates occasionally), and also because in a few years the cRio will be obsolete
+        and replaced by the new DRio. As such, I am deciding whether it is worth the time and effort
+        to continue working on this cRio simulator.
