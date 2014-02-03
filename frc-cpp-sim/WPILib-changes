@@ -1,0 +1,30 @@
+Removed OSAL/Task.cpp and OSAL/Task.h
+OSAL/Synchronized.cpp:
+	Removed SEM_ID constructor
+	Removed references to usingSem
+	Initialized m_semaphore reference in constructor
+	Changed m_sem to m_semaphore and -> to .
+	Removed unnecessary SEM_ID code form destructor
+Uses https://github.com/anidev/networktables-pc instead of built in networktables
+Comment out sin_len where it is ued
+	sed -ri 's/(.*sin_len.*)/\/\/\1/g' `find -type f`
+Vision/PCVideoServer.cpp:
+	Changed type of clientAddrSize from int to socklen_t
+ErrorBase.cpp:
+	Does not include vxworks symbol table headers if simulating
+		symLib.h, sysSymTbl.h
+	ErrorBase::SetErrnoError:
+		Does not attempt to look up symbols if simulating
+Utility.cpp:
+	Does not include vxworks debugging headers if simulating
+		dbgLib.h, sysSymTbl.h
+	Prints debugging info via GNU's execinfo.h if simulating
+Includes semLib.h in NetworkCommunication/FRCComm.h
+RobotBase.cpp:
+	Does not include vxworks module headers if simulating
+		moduleLib.h, unldLib.h
+	Does not check if FRC_RobotTask exists if simulating
+Change all Task::Start calls so they use taskarg_t instead of int32_t
+	sed -ri 's/Start\(\((u?)int(32_t)?/Start\(\(taskarg_t/g' `find -type f`
+	Also they should include taskLib.h
+	Also arguments should be taskarg_t (only relevant for RobotBase.cpp)

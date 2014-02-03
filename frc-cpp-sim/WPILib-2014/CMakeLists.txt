@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(WPILib_frc-cpp-sim)
+file(GLOB_RECURSE WPILIB_SOURCES *.cpp)
+include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${VXWORKS-SYSTEM_DIR}/include)
+add_library(wpilib ${WPILIB_SOURCES})
