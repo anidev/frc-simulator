@@ -12,7 +12,7 @@
 #include <string.h> // for the mem... family of functions
 #include <stdarg.h> // for va_... family of functions
 
-typedef int (*FUNCPTR)(...);
+typedef uintptr_t (*FUNCPTR)(...);
 
 typedef int8_t   INT8;
 typedef uint8_t  UINT8;
