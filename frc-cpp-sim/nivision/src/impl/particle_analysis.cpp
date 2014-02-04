@@ -13,20 +13,47 @@
 //  Particle Analysis functions
 //============================================================================
 
-// forget particle analysis...
-// can't figure out how to do it in OpenCV, and
-// don't have time to further investigate.
 // TODO implement particle analysis.
 
 int imaqCountParticles(Image* image,int connectivity8,int* numParticles) {
 	NOTNULL(image,"imaqCountParticles");
 	NOTNULL(numParticles,"imaqCountParticles");
 	*numParticles=0; // i'll fix it some other time...
-	return RET_SUCCESS;
+	return RET_FAIL;
 }
 
 int imaqMeasureParticle(Image* image,int particleNumber,int calibrated,MeasurementType measurement,double* value) {
 	NOTNULL(image,"imaqMeasureParticle");
 	NOTNULL(value,"imaqMeasureParticle");
 	return RET_FAIL; // because obviously there are no particles to be found... so why the NOTNULL's above? good question...
+}
+
+int imaqParticleFilter4(Image* dest,Image* source,const ParticleFilterCriteria2* criteria,int criteriaCount,const ParticleFilterOptions2* options,const ROI* roi,int* numParticles) {
+	NOTNULL(source,"imaqParticleFilter4");
+	NOTNULL(dest,"imaqParticleFilter4");
+	NOTNULL(criteria,"imaqParticleFilter4");
+	NOTNULL(options,"imaqParticleFilter4");
+	NOTNULL(roi,"imaqParticleFilter4");
+	NOTNULL(numParticles,"imaqParticleFilter4");
+	return RET_FAIL;
+}
+
+//============================================================================
+//  Morphology functions
+//============================================================================
+
+// TODO implement morphology
+
+int imaqConvexHull(Image* dest,Image* source,int connectivity8) {
+	NOTNULL(source,"imaqConvexHull");
+	NOTNULL(dest,"imaqConvexHull");
+	dest->mat_data=source->mat_data;
+	return RET_FAIL;
+}
+
+int imaqSizeFilter(Image* dest,Image* source,int connectivity8,int erosions,SizeType keepSize,const StructuringElement* structuringElement) {
+	NOTNULL(source,"imaqSizeFilter");
+	NOTNULL(dest,"imaqSizeFilter");
+	NOTNULL(structuringElement,"imaqSizeFilter");
+	return RET_FAIL;
 }
